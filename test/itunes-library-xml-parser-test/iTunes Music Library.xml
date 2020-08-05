@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Major Version</key><integer>1</integer>
+	<key>Minor Version</key><integer>1</integer>
+	<key>Application Version</key><string>12.10.7.3</string>
+	<key>Date</key><date>2020-07-16T15:04:56Z</date>
+	<key>Features</key><integer>5</integer>
+	<key>Show Content Ratings</key><true/>
+	<key>Library Persistent ID</key><string>007B8863623AB470</string>
+	<key>Tracks</key>
+	<dict>
+		<key>80</key>
+		<dict>
+			<key>Track ID</key><integer>80</integer>
+			<key>Size</key><integer>17693766</integer>
+			<key>Total Time</key><integer>488866</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>1</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:53:34Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>251BAE01A98F6EFF</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>The Legend Of Zelda 25th Anniversary Medley</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Name</key><string>Legend Of Zelda 25th Anniversary Medley</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/01%20The%20Legend%20Of%20Zelda%2025th%20Annivers.m4a</string>
+		</dict>
+		<key>82</key>
+		<dict>
+			<key>Track ID</key><integer>82</integer>
+			<key>Size</key><integer>6128036</integer>
+			<key>Total Time</key><integer>170240</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>2</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:54:05Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>2D35DA5622AEC104</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>Kakariko Village (Twilight Princess Theme)</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/02%20Kakariko%20Village%20(Twilight%20Prince.m4a</string>
+		</dict>
+		<key>84</key>
+		<dict>
+			<key>Track ID</key><integer>84</integer>
+			<key>Size</key><integer>22068971</integer>
+			<key>Total Time</key><integer>631000</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>3</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:54:24Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>8311F9513AEAA3ED</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>The Wind Waker Symphonic Movement</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Name</key><string>Wind Waker Symphonic Movement</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/03%20The%20Wind%20Waker%20Symphonic%20Movement.m4a</string>
+		</dict>
+		<key>86</key>
+		<dict>
+			<key>Track ID</key><integer>86</integer>
+			<key>Size</key><integer>7944698</integer>
+			<key>Total Time</key><integer>216466</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>4</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:54:41Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>E725EBA6FD623050</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>Gerudo Valley</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/04%20Gerudo%20Valley.m4a</string>
+		</dict>
+		<key>88</key>
+		<dict>
+			<key>Track ID</key><integer>88</integer>
+			<key>Size</key><integer>6556786</integer>
+			<key>Total Time</key><integer>183533</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>5</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:54:49Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>EA9E2BF8FC127B25</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>Great Fairy's Fountain Theme</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/05%20Great%20Fairy's%20Fountain%20Theme.m4a</string>
+		</dict>
+		<key>90</key>
+		<dict>
+			<key>Track ID</key><integer>90</integer>
+			<key>Size</key><integer>22320373</integer>
+			<key>Total Time</key><integer>631133</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>6</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:54:56Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>1AB2C53B25076615</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>Twilight Princess Symphonic Movement</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/06%20Twilight%20Princess%20Symphonic%20Movem.m4a</string>
+		</dict>
+		<key>92</key>
+		<dict>
+			<key>Track ID</key><integer>92</integer>
+			<key>Size</key><integer>9805046</integer>
+			<key>Total Time</key><integer>268866</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>7</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:55:19Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>E3F84FBB2B76DD2E</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>The Legend Of Zelda Main Theme Medley</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Name</key><string>Legend Of Zelda Main Theme Medley</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/07%20The%20Legend%20Of%20Zelda%20Main%20Theme%20Me.m4a</string>
+		</dict>
+		<key>94</key>
+		<dict>
+			<key>Track ID</key><integer>94</integer>
+			<key>Size</key><integer>4999988</integer>
+			<key>Total Time</key><integer>125826</integer>
+			<key>Disc Number</key><integer>1</integer>
+			<key>Disc Count</key><integer>1</integer>
+			<key>Track Number</key><integer>8</integer>
+			<key>Track Count</key><integer>8</integer>
+			<key>Year</key><integer>2011</integer>
+			<key>Date Modified</key><date>2020-07-16T14:57:19Z</date>
+			<key>Date Added</key><date>2020-07-16T14:55:28Z</date>
+			<key>Bit Rate</key><integer>256</integer>
+			<key>Sample Rate</key><integer>44100</integer>
+			<key>Artwork Count</key><integer>1</integer>
+			<key>Persistent ID</key><string>22BE1B4C29FF2045</string>
+			<key>Track Type</key><string>File</string>
+			<key>File Folder Count</key><integer>5</integer>
+			<key>Library Folder Count</key><integer>1</integer>
+			<key>Name</key><string>Ballad Of The Goddess From Skyward Sword</string>
+			<key>Artist</key><string>Koji Kondo</string>
+			<key>Composer</key><string>Koji Kondo</string>
+			<key>Album</key><string>The Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Genre</key><string>Soundtrack</string>
+			<key>Kind</key><string>AAC audio file</string>
+			<key>Sort Album</key><string>Legend Of Zelda 25th Anniversary Special Orchestra CD</string>
+			<key>Location</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/08%20Ballad%20Of%20The%20Goddess%20From%20Skywar.m4a</string>
+		</dict>
+	</dict>
+	<key>Playlists</key>
+	<array>
+		<dict>
+			<key>Master</key><true/>
+			<key>Playlist ID</key><integer>96</integer>
+			<key>Playlist Persistent ID</key><string>2B5A9674E572717C</string>
+			<key>All Items</key><true/>
+			<key>Visible</key><false/>
+			<key>Name</key><string>Library</string>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>80</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>82</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>84</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>86</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>88</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>90</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>92</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>94</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>107</integer>
+			<key>Playlist Persistent ID</key><string>4EF99E0E975BCE1F</string>
+			<key>Distinguished Kind</key><integer>65</integer>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Downloaded</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAQIbEAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAQIbEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIIAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIIAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAhQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAEQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAEAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+			</data>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>80</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>82</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>84</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>86</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>88</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>90</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>92</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>94</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>118</integer>
+			<key>Playlist Persistent ID</key><string>768F1281E51042D3</string>
+			<key>Distinguished Kind</key><integer>4</integer>
+			<key>Music</key><true/>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Music</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAQIbEAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAQIbEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIIAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIIAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAA
+			</data>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>80</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>82</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>84</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>86</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>88</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>90</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>92</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>94</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>138</integer>
+			<key>Playlist Persistent ID</key><string>2545AB1EF27F5AC7</string>
+			<key>Distinguished Kind</key><integer>66</integer>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Downloaded</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIKAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIKAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAhQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAEQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAEAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+			</data>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>141</integer>
+			<key>Playlist Persistent ID</key><string>BCFB5C1EE65D80A7</string>
+			<key>Distinguished Kind</key><integer>2</integer>
+			<key>Movies</key><true/>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Movies</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIKAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIKAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAA
+			</data>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>147</integer>
+			<key>Playlist Persistent ID</key><string>E722F640809560DE</string>
+			<key>Distinguished Kind</key><integer>67</integer>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Downloaded</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIKAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIKAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAhQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAEQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAEAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+			</data>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>150</integer>
+			<key>Playlist Persistent ID</key><string>4EAA9AFB2E18BD32</string>
+			<key>Distinguished Kind</key><integer>3</integer>
+			<key>TV Shows</key><true/>
+			<key>All Items</key><true/>
+			<key>Name</key><string>TV Shows</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIKAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIKAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAA
+			</data>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>153</integer>
+			<key>Playlist Persistent ID</key><string>6FA86E011CD60105</string>
+			<key>Distinguished Kind</key><integer>10</integer>
+			<key>Podcasts</key><true/>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Podcasts</string>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>160</integer>
+			<key>Playlist Persistent ID</key><string>65036B0AC9EEE798</string>
+			<key>Distinguished Kind</key><integer>5</integer>
+			<key>Audiobooks</key><true/>
+			<key>All Items</key><true/>
+			<key>Name</key><string>Audiobooks</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAQAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAB
+			AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AgAEAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAIKAE
+			AAAAAAAAAAAAAAAAAAAAAQAAAAAAIKAEAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA
+			AAAAAAAA
+			</data>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>203</integer>
+			<key>Playlist Persistent ID</key><string>ADACB1B93A6C37C3</string>
+			<key>All Items</key><true/>
+			<key>Folder</key><true/>
+			<key>Name</key><string>Yoann</string>
+			<key>Smart Info</key>
+			<data>
+			AQEAAwAAAAIAAAAZAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAA==
+			</data>
+			<key>Smart Criteria</key>
+			<data>
+			U0xzdAABAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAAAAAAAAAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEiKT6GiYAQ/MAAAAAAAAAAAAAAAAAAAAB
+			iKT6GiYAQ/MAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+			</data>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>80</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>82</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>84</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>86</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>88</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>90</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>92</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>94</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>Playlist ID</key><integer>166</integer>
+			<key>Parent Persistent ID</key><string>ADACB1B93A6C37C3</string>
+			<key>Playlist Persistent ID</key><string>88A4FA1A260043F3</string>
+			<key>All Items</key><true/>
+			<key>Name</key><string>My awesome TLOZ playlist</string>
+			<key>Playlist Items</key>
+			<array>
+				<dict>
+					<key>Track ID</key><integer>80</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>82</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>84</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>86</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>88</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>90</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>92</integer>
+				</dict>
+				<dict>
+					<key>Track ID</key><integer>94</integer>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Music Folder</key><string>file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/</string>
+</dict>
+</plist>

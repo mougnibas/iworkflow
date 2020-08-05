@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "MusicWorkflow",
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"vscode-icons-team.vscode-icons",
+			"ms-dotnettools.csharp",
+			"github.vscode-pull-request-github",
+			"k--kato.docomment"
+		]
+	},
+	"settings": {
+		"task.problemMatchers.neverPrompt": true
+	}
+}
