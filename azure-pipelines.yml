@@ -15,12 +15,11 @@
 # You should have received a copy of the GNU General Public License
 # along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-# Only build "master" and "feature/*" branch
+# Only build "master" branch
 trigger: 
 - master
-- feature/*
 
-# Only build pull requests on "master" and "feature/*" target branch
+# Only build pull requests on "master" or "feature/*" target branch
 pr:
 - master
 - feature/*
