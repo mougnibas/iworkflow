@@ -17,9 +17,7 @@
 
 namespace Mougnibas.MusicWorkflow.Database.Test
 {
-    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mougnibas.MusicWorkflow.Database;
 
     /// <summary>
     /// Track unit test class.
@@ -28,28 +26,19 @@ namespace Mougnibas.MusicWorkflow.Database.Test
     public class TrackUnitTest
     {
         /// <summary>
-        /// The class instance to test.
-        /// </summary>
-        private Track toTest;
-
-        /// <summary>
-        /// Invoke this method before each test method.
-        /// </summary>
-        [TestInitialize]
-        public void Init()
-        {
-            // Instantiate the class to test
-            this.toTest = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-        }
-
-        /// <summary>
         /// Test the <see cref="Track.TrackID"/> method.
         /// </summary>
         [TestMethod]
-        public void TestTrackID()
+        public void TrackIdIs1337()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             int expected = 1337;
-            int actual = this.toTest.TrackID;
+
+            // Act
+            int actual = track.TrackID;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -57,10 +46,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.AlbumArtist"/> method.
         /// </summary>
         [TestMethod]
-        public void TestAlbumArtist()
+        public void TrackAlbumArtistIsLinkinPark()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "Linkin Park";
-            string actual = this.toTest.AlbumArtist;
+
+            // Act
+            string actual = track.AlbumArtist;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -68,10 +63,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.Album"/> method.
         /// </summary>
         [TestMethod]
-        public void TestAlbum()
+        public void TrackAlbumIsTheHuntingParty()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "The Hunting Party";
-            string actual = this.toTest.Album;
+
+            // Act
+            string actual = track.Album;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -79,10 +80,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.TrackNumber"/> method.
         /// </summary>
         [TestMethod]
-        public void TestTrackNumber()
+        public void TrackNumberIs8()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             int expected = 8;
-            int actual = this.toTest.TrackNumber;
+
+            // Act
+            int actual = track.TrackNumber;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -90,10 +97,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.Name"/> method.
         /// </summary>
         [TestMethod]
-        public void TestName()
+        public void TrackNameIsRebellion()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "Rebellion";
-            string actual = this.toTest.Name;
+
+            // Act
+            string actual = track.Name;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -101,10 +114,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.Artist"/> method.
         /// </summary>
         [TestMethod]
-        public void TestArtist()
+        public void TrackArtistIsLinkinParkFeaturingDaronMalakian()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "Linkin Park feat. Daron Malakian";
-            string actual = this.toTest.Artist;
+
+            // Act
+            string actual = track.Artist;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -112,10 +131,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.Location"/> method.
         /// </summary>
         [TestMethod]
-        public void TestLocation()
+        public void TrackLocationIsOnAGivenRepository()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a";
-            string actual = this.toTest.Location;
+
+            // Act
+            string actual = track.Location;
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -123,108 +148,154 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestEquals()
+        public void TwoTracksAreEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track anotherTrack = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreEqual(track, anotherTrack);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestEqualsReverse()
+        public void TwoTracksAreEqualInReverseOrder()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreEqual(this.toTest, newReference);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track anotherTrack = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreEqual(track, anotherTrack);
+            Assert.AreEqual(anotherTrack, track);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnNull()
+        public void TrackAndNullAreNotEqual()
         {
-            Assert.AreNotEqual(this.toTest, null);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, null);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnAnotherType()
+        public void TrackAndForgedStringAreNotEqual()
         {
-            Assert.AreNotEqual(this.toTest, "A string object");
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            string forged = "A string object";
+
+            // Act and Assert
+            Assert.AreNotEqual(track, forged);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnTrackId()
+        public void TwoTracksNotEqualOnTrackIdAreNotEqual()
         {
-            var newReference = new Track(1336, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1336, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnAlbumArtist()
+        public void TwoTracksNotEqualOnAlbumArtistAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Parkkk", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Parkkk", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnAlbum()
+        public void TwoTracksNotEqualOnAlbumAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Partyyyy", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Partyyyy", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnTrackNumber()
+        public void TwoTracksNotEqualOnTrackNumberAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 9, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Party", 9, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnName()
+        public void TwoTracksNotEqualOnNameAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellionnn", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellionnn", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnArtist()
+        public void TwoTracksNotEqualOnArtistAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian and me", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian and me", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
         /// Test the <see cref="Track.Equals(object)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnLocation()
+        public void TwoTracksNotEqualOnLocationAreNotEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4aaa");
-            Assert.AreNotEqual(newReference, this.toTest);
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4aaa");
+
+            // Act and Assert
+            Assert.AreNotEqual(track, newReference);
         }
 
         /// <summary>
@@ -236,11 +307,17 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         ///     dotnet implementations and dotnet versions.
         /// </remarks>
         [TestMethod]
-        public void TestGetHashCode()
+        public void HashcodeOfSameTracksAreEqual()
         {
-            var newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
+            Track newReference = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             int expected = newReference.GetHashCode();
-            int actual = this.toTest.GetHashCode();
+
+            // Act
+            int actual = track.GetHashCode();
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -248,10 +325,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test <see cref="Track.ToString()"/> method.
         /// </summary>
         [TestMethod]
-        public void TestToString()
+        public void TrackToStringAndForgedStringAreEqual()
         {
+            // Arrange
+            Track track = new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a");
             string expected = "Track(TrackID='1337', AlbumArtist='Linkin Park', Album='The Hunting Party', TrackNumber='8', Name='Rebellion', Artist='Linkin Park feat. Daron Malakian', Location='M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a')";
-            string actual = this.toTest.ToString();
+
+            // Act
+            string actual = track.ToString();
+
+            // Assert
             Assert.AreEqual(expected, actual);
         }
     }

@@ -20,7 +20,6 @@ namespace Mougnibas.MusicWorkflow.Database.Test
     using System;
     using System.Collections.ObjectModel;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mougnibas.MusicWorkflow.Database;
 
     /// <summary>
     /// Playlist unit test class.
@@ -32,14 +31,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(PlaylistFolder, string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithParentConstructorOnParent()
+        public void InstantiateWithParentReturnSameParentReference()
         {
             // Arrange
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
             Playlist playlist = new Playlist(parent, "another identifier", "another name", Array.Empty<Track>());
+            PlaylistFolder expected = parent;
 
             // Act
-            PlaylistFolder expected = parent;
             PlaylistFolder actual = playlist.Parent;
 
             // Assert
@@ -50,15 +49,15 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(PlaylistFolder, string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithParentConstructorOnIdentifier()
+        public void InstantiateWithParentReturnSameIdentifierReference()
         {
             // Arrange
             string identifier = "another identifier";
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
             Playlist playlist = new Playlist(parent, identifier, "another name", Array.Empty<Track>());
+            string expected = identifier;
 
             // Act
-            string expected = identifier;
             string actual = playlist.Identifier;
 
             // Assert
@@ -69,15 +68,15 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(PlaylistFolder, string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithParentConstructorOnName()
+        public void InstantiateWithParentReturnSameNameReference()
         {
             // Arrange
             string name = "another name";
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
             Playlist playlist = new Playlist(parent, "another identifier", name, Array.Empty<Track>());
+            string expected = name;
 
             // Act
-            string expected = name;
             string actual = playlist.Name;
 
             // Assert
@@ -88,15 +87,15 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(PlaylistFolder, string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithParentConstructorOnTracks()
+        public void InstantiateWithParentReturnSameTracks()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
             Playlist playlist = new Playlist(parent, "another identifier", "another name", tracks);
+            ReadOnlyCollection<Track> expected = new ReadOnlyCollection<Track>(tracks);
 
             // Act
-            ReadOnlyCollection<Track> expected = new ReadOnlyCollection<Track>(tracks);
             ReadOnlyCollection<Track> actual = playlist.Tracks;
 
             // Assert
@@ -107,14 +106,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithoutParentConstructorOnIdentifier()
+        public void InstantiateWithoutParentReturnSameIdentifierReference()
         {
             // Arrange
             string identifier = "another identifier";
             Playlist playlist = new Playlist(identifier, "another name", Array.Empty<Track>());
+            string expected = identifier;
 
             // Act
-            string expected = identifier;
             string actual = playlist.Identifier;
 
             // Assert
@@ -125,14 +124,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithoutParentConstructorOnName()
+        public void InstantiateWithoutParentReturnSameNameReference()
         {
             // Arrange
             string name = "another name";
             Playlist playlist = new Playlist("another identifier", name, Array.Empty<Track>());
+            string expected = name;
 
             // Act
-            string expected = name;
             string actual = playlist.Name;
 
             // Assert
@@ -143,14 +142,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Playlist(string, string, Track[])"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestPlaylistWithoutParentConstructorOnTracks()
+        public void InstantiateWithoutParentReturnSameTracks()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             Playlist playlist = new Playlist("another identifier", "another name", tracks);
+            ReadOnlyCollection<Track> expected = new ReadOnlyCollection<Track>(tracks);
 
             // Act
-            ReadOnlyCollection<Track> expected = new ReadOnlyCollection<Track>(tracks);
             ReadOnlyCollection<Track> actual = playlist.Tracks;
 
             // Assert
@@ -161,15 +160,15 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Parent"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestParent()
+        public void InstantiateWithParentReturnSameParent()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
             Playlist playlist = new Playlist(parent, "another identifier", "another name", tracks);
+            PlaylistFolder expected = parent;
 
             // Act
-            PlaylistFolder expected = parent;
             PlaylistFolder actual = playlist.Parent;
 
             // Assert
@@ -180,14 +179,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Identifier"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestIdentifier()
+        public void InstantiateWithoutParentReturnSameIdentifier()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             Playlist playlist = new Playlist("identifier", "name", tracks);
+            string expected = "identifier";
 
             // Act
-            string expected = "identifier";
             string actual = playlist.Identifier;
 
             // Assert
@@ -198,14 +197,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Name"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestName()
+        public void InstantiateWithoutParentReturnSameName()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             Playlist playlist = new Playlist("identifier", "name", tracks);
+            string expected = "name";
 
             // Act
-            string expected = "name";
             string actual = playlist.Name;
 
             // Assert
@@ -213,28 +212,10 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         }
 
         /// <summary>
-        /// Test the <see cref="Playlist.Tracks"/> constructor.
-        /// </summary>
-        [TestMethod]
-        public void TestTracks()
-        {
-            // Arrange
-            Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
-            Playlist playlist = new Playlist("another identifier", "another name", tracks);
-
-            // Act
-            ReadOnlyCollection<Track> expected = new ReadOnlyCollection<Track>(tracks);
-            ReadOnlyCollection<Track> actual = playlist.Tracks;
-
-            // Assert
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEquals()
+        public void SamePlaylistWithoutParentAreEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -249,7 +230,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEqualsReverse()
+        public void SamePlaylistWithoutParentAreEqualInReverseOrder()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -264,7 +245,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEqualsWithParent()
+        public void SamePlaylistWithParentAreEqual()
         {
             // Arrange
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
@@ -281,7 +262,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEqualsWithParentReverse()
+        public void SamePlaylistWithParentAreEqualInReverseOrder()
         {
             // Arrange
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
@@ -298,7 +279,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnParent()
+        public void TwoPlaylistWithParentNotEqualOnParentAreNotEqual()
         {
             // Arrange
             PlaylistFolder parent = new PlaylistFolder("identifier", "name");
@@ -315,7 +296,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnIdentifier()
+        public void TwoPlaylistWithoutParentNotEqualOnIdentifierAreNotEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -330,7 +311,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnName()
+        public void TwoPlaylistWithoutParentNotEqualOnNameAreNotEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -345,7 +326,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnTracks()
+        public void TwoPlaylistWithoutParentNotEqualOnTracksAreNotEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -361,7 +342,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnNull()
+        public void PlaylistAndNullAreNotEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -375,7 +356,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnAnotherType()
+        public void PlaylistAndStringAreNotEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
@@ -394,16 +375,16 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         ///     dotnet implementations and dotnet versions.
         /// </remarks>
         [TestMethod]
-        public void TestGetHashCode()
+        public void HashcodeOfSamePlaylistAreEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             Track[] anotherTracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
             Playlist playlist = new Playlist("identifier", "name", tracks);
             Playlist anotherPlaylist = new Playlist("identifier", "name", anotherTracks);
+            int expected = playlist.GetHashCode();
 
             // Act
-            int expected = playlist.GetHashCode();
             int actual = anotherPlaylist.GetHashCode();
 
             // Assert
@@ -414,15 +395,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.ToString"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestToString()
+        public void PlaylistToStringAndForgedStringAreEqual()
         {
             // Arrange
             Track[] tracks = new Track[] { new Track(1337, "Linkin Park", "The Hunting Party", 8, "Rebellion", "Linkin Park feat. Daron Malakian", "M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a") };
-            Playlist playlist = new Playlist("identifier", "name", tracks);
             Playlist anotherPlaylist = new Playlist("identifier", "name", tracks);
+            string expected = "Playlist(Parent='', Identifier='identifier', Name='name', Tracks='Track(TrackID='1337', AlbumArtist='Linkin Park', Album='The Hunting Party', TrackNumber='8', Name='Rebellion', Artist='Linkin Park feat. Daron Malakian', Location='M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a')')";
 
             // Act
-            string expected = "Playlist(Parent='', Identifier='identifier', Name='name', Tracks='Track(TrackID='1337', AlbumArtist='Linkin Park', Album='The Hunting Party', TrackNumber='8', Name='Rebellion', Artist='Linkin Park feat. Daron Malakian', Location='M:\\repo\\Linkin Park\\The Hunting Party\\1-08 Rebellion.m4a')')";
             string actual = anotherPlaylist.ToString();
 
             // Assert

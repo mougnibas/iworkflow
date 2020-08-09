@@ -30,14 +30,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.PlaylistFolder(string, string)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestConstructorIdentifier()
+        public void InstantiateWithIdentifierAndNameReturnSameIdentifierReference()
         {
             // Arrange
             string identifier = "my identifier";
             PlaylistFolder playlistFolder = new PlaylistFolder(identifier, "my name");
+            string expected = identifier;
 
             // Act
-            string expected = identifier;
             string actual = playlistFolder.Identifier;
 
             // Assert
@@ -48,14 +48,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.PlaylistFolder(string, string)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestConstructorName()
+        public void InstantiateWithIdentifierAndNameReturnSameNameReference()
         {
             // Arrange
             string name = "my name";
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", name);
+            string expected = name;
 
             // Act
-            string expected = name;
             string actual = playlistFolder.Name;
 
             // Assert
@@ -66,13 +66,13 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Identifier"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestIdentifier()
+        public void InstantiateWithIdentifierAndNameReturnSameIdentifier()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
+            string expected = "my identifier";
 
             // Act
-            string expected = "my identifier";
             string actual = playlistFolder.Identifier;
 
             // Assert
@@ -83,13 +83,13 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Name"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestName()
+        public void InstantiateWithIdentifierAndNameReturnSameName()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
+            string expected = "my name";
 
             // Act
-            string expected = "my name";
             string actual = playlistFolder.Name;
 
             // Assert
@@ -100,14 +100,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Add(Playlist)"/> method.
         /// </summary>
         [TestMethod]
-        public void TestAdd()
+        public void AddPlaylistReturnSamePlaylist()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
             playlistFolder.Add(new Playlist("identifier", "name", Array.Empty<Track>()));
+            Playlist expected = new Playlist("identifier", "name", Array.Empty<Track>());
 
             // Act
-            Playlist expected = new Playlist("identifier", "name", Array.Empty<Track>());
             Playlist actual = playlistFolder.Playlists[0];
 
             // Assert
@@ -115,10 +115,29 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         }
 
         /// <summary>
+        /// Test the <see cref="PlaylistFolder.Add(Playlist)"/> method.
+        /// </summary>
+        [TestMethod]
+        public void AddPlaylistReturnSamePlaylistReference()
+        {
+            // Arrange
+            Playlist playlist = new Playlist("identifier", "name", Array.Empty<Track>());
+            PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
+            playlistFolder.Add(playlist);
+            Playlist expected = playlist;
+
+            // Act
+            Playlist actual = playlistFolder.Playlists[0];
+
+            // Assert
+            Assert.AreSame(expected, actual);
+        }
+
+        /// <summary>
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEquals()
+        public void SamePlaylistFoldersAreEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -132,7 +151,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestEqualsReverse()
+        public void SamePlaylistFoldersAreEqualInReverseOrder()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -146,7 +165,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnIdentifier()
+        public void TwoPlaylistFolderNotEqualOnIdentifierAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -160,7 +179,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnName()
+        public void TwoPlaylistFolderNotEqualOnNameAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -174,7 +193,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnNull()
+        public void PlaylistFolderAndNullAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -187,7 +206,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="PlaylistFolder.Equals(object)"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestNotEqualsOnAnotherType()
+        public void PlaylistFolderAndStringAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
@@ -205,14 +224,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         ///     dotnet implementations and dotnet versions.
         /// </remarks>
         [TestMethod]
-        public void TestGetHashCode()
+        public void HashcodeOfSamePlaylistFoldersAreEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
             PlaylistFolder otherPlaylistFolder = new PlaylistFolder("my identifier", "my name");
+            int expected = playlistFolder.GetHashCode();
 
             // Act
-            int expected = playlistFolder.GetHashCode();
             int actual = otherPlaylistFolder.GetHashCode();
 
             // Assert
@@ -228,14 +247,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         ///     dotnet implementations and dotnet versions.
         /// </remarks>
         [TestMethod]
-        public void TestGetHashCodeNotEqualOnIdentifier()
+        public void HashcodeOfTwoPlaylistFolderNotEqualOnIdentifierAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
             PlaylistFolder otherPlaylistFolder = new PlaylistFolder("my other identifier", "my name");
+            int expected = playlistFolder.GetHashCode();
 
             // Act
-            int expected = playlistFolder.GetHashCode();
             int actual = otherPlaylistFolder.GetHashCode();
 
             // Assert
@@ -251,14 +270,14 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         ///     dotnet implementations and dotnet versions.
         /// </remarks>
         [TestMethod]
-        public void TestGetHashCodeNotEqualOnName()
+        public void HashcodeOfTwoPlaylistFolderNotEqualOnNameAreNotEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
             PlaylistFolder otherPlaylistFolder = new PlaylistFolder("my identifier", "my other name");
+            int expected = playlistFolder.GetHashCode();
 
             // Act
-            int expected = playlistFolder.GetHashCode();
             int actual = otherPlaylistFolder.GetHashCode();
 
             // Assert
@@ -269,13 +288,13 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.ToString"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestToStringWithoutPlaylists()
+        public void PlaylistFolderToStringAndForgedStringAreEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
+            string expected = "PlaylistFolder(Identifier='my identifier', Name='my name', Playlists='')";
 
             // Act
-            string expected = "PlaylistFolder(Identifier='my identifier', Name='my name', Playlists='')";
             string actual = playlistFolder.ToString();
 
             // Assert
@@ -286,7 +305,7 @@ namespace Mougnibas.MusicWorkflow.Database.Test
         /// Test the <see cref="Playlist.ToString"/> constructor.
         /// </summary>
         [TestMethod]
-        public void TestToStringWithPlaylists()
+        public void PlaylistFolderWithPlaylistsToStringAndForgedStringAreEqual()
         {
             // Arrange
             PlaylistFolder playlistFolder = new PlaylistFolder("my identifier", "my name");
