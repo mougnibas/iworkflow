@@ -21,7 +21,6 @@ namespace Mougnibas.MusicWorkflow.UIHost
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
 
     /// <summary>
     /// ASP.NET Core startup class.
@@ -46,6 +45,7 @@ namespace Mougnibas.MusicWorkflow.UIHost
         /// Use this method to add services to the container.
         /// </summary>
         /// <param name="services">The services to add.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This method gets called by the runtime.")]
         public void ConfigureServices(IServiceCollection services)
         {
             // This method gets called by the runtime.
@@ -59,20 +59,13 @@ namespace Mougnibas.MusicWorkflow.UIHost
         /// </summary>
         /// <param name="app">The application builder.</param>
         /// <param name="env">The web host environment.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This method gets called by the runtime.")]
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseWebAssemblyDebugging();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
+            app.UseExceptionHandler("/Error");
 
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
 
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
