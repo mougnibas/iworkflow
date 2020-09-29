@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <!-- Base properties -->
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.Provider.AppleMusicService</RootNamespace>
+    <RootNamespace>Mougnibas.MusicWorkflow.UI</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -11,8 +11,8 @@
   <PropertyGroup>
     <Company>N.A.</Company>
     <Copyright>2020 Yoann MOUGNIBAS</Copyright>
-    <Description>Apple Music Service Provider sub-project, from MusicWorkflow project.</Description>
-    <Product>MusicWorkflow (Apple Music Service Provider module)</Product>
+    <Description>UI sub-project, from MusicWorkflow project.</Description>
+    <Product>MusicWorkflow (ui module)</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
   </PropertyGroup>
@@ -20,10 +20,10 @@
   <!-- NuGet metadata properties -->
   <PropertyGroup>
     <PackageVersion>1.0.0-alpha</PackageVersion>
-    <PackageId>MusicWorkflow-AppleMusicServiceProvider</PackageId>
-    <Title>MusicWorkflow Apple Music Service Provider</Title>
+    <PackageId>MusicWorkflow-UI</PackageId>
+    <Title>MusicWorkflow UI</Title>
     <Authors>Yoann MOUGNIBAS</Authors>
-    <PackageDescription>Apple Music Service Provider sub-project, from MusicWorkflow project.</PackageDescription>
+    <PackageDescription>UI sub-project, from MusicWorkflow project.</PackageDescription>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/mougnibas/music-workflow</RepositoryUrl>
   </PropertyGroup>
@@ -31,6 +31,12 @@
   <!-- Private dependency -->
   <ItemGroup>
     <ProjectReference Include="..\contract\contract.csproj" />
+  </ItemGroup>
+
+  <!-- Blazor related public dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0-rc.1.20451.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0-rc.1.20451.17" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- FxCop Analyzer -->

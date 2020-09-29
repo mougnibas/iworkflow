@@ -28,6 +28,11 @@
     <RepositoryUrl>https://github.com/mougnibas/music-workflow</RepositoryUrl>
   </PropertyGroup>
 
+  <!-- This assembly can be used by web assembly (browser) -->
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
   <!-- FxCop Analyzer -->
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.7">
