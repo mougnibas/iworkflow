@@ -2,8 +2,8 @@
 
   <!-- Base properties -->
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.Database.Test</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -20,8 +20,8 @@
   <PropertyGroup>
     <Company>N.A.</Company>
     <Copyright>2020 Yoann MOUGNIBAS</Copyright>
-    <Description>Database sub-project test, from MusicWorkflow project.</Description>
-    <Product>MusicWorkflow (database test module)</Product>
+    <Description>Apple Music Service Provider sub-project tests, from MusicWorkflow project.</Description>
+    <Product>MusicWorkflow (Apple Music Service Provider test module)</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
   </PropertyGroup>
@@ -33,7 +33,7 @@
 
   <!-- Private dependency -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\database\database.csproj" />
+    <ProjectReference Include="..\..\src\apple-music-service-provider\apple-music-service-provider.csproj" />
   </ItemGroup>
 
   <!-- FxCop Analyzer -->
@@ -65,6 +65,5 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
   </ItemGroup>
-
 
 </Project>

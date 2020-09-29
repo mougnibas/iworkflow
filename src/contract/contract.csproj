@@ -2,8 +2,8 @@
 
   <!-- Base properties -->
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.Database</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Mougnibas.MusicWorkflow.Contract</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -11,8 +11,8 @@
   <PropertyGroup>
     <Company>N.A.</Company>
     <Copyright>2020 Yoann MOUGNIBAS</Copyright>
-    <Description>Database sub-project, from MusicWorkflow project.</Description>
-    <Product>MusicWorkflow (database module)</Product>
+    <Description>Contract sub-project, from MusicWorkflow project.</Description>
+    <Product>MusicWorkflow (contract module)</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
   </PropertyGroup>
@@ -20,10 +20,10 @@
   <!-- NuGet metadata properties -->
   <PropertyGroup>
     <PackageVersion>1.0.0-alpha</PackageVersion>
-    <PackageId>MusicWorkflow-Database</PackageId>
-    <Title>MusicWorkflow Database</Title>
+    <PackageId>MusicWorkflow-Contract</PackageId>
+    <Title>MusicWorkflow Contract</Title>
     <Authors>Yoann MOUGNIBAS</Authors>
-    <PackageDescription>Database sub-project, from MusicWorkflow project.</PackageDescription>
+    <PackageDescription>Contract sub-project, from MusicWorkflow project.</PackageDescription>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/mougnibas/music-workflow</RepositoryUrl>
   </PropertyGroup>

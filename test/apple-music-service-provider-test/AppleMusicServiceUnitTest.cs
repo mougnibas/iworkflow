@@ -15,274 +15,276 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Test
+namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Mougnibas.MusicWorkflow.Database;
-    using Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Exceptions;
+    using Mougnibas.MusicWorkflow.Contract.Model;
+    using Mougnibas.MusicWorkflow.Contract.Service;
+    using Mougnibas.MusicWorkflow.Provider.AppleMusicService;
+    using Mougnibas.MusicWorkflow.Provider.AppleMusicService.Exceptions;
 
     /// <summary>
-    /// Parser unit test class.
+    /// ITunesMusicService unit test class.
     /// </summary>
     [TestClass]
-    public class ParserUnitTest
+    public class AppleMusicServiceUnitTest
     {
         /// <summary>
-        /// Test the <see cref="Parser.Parser()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.AppleMusicServiceProvider()"/> constructor.
         /// </summary>
         [TestMethod]
         public void InstantiateEmptyConstructorReturnDefaultPath()
         {
             // Arrange
-            Parser parser = new Parser();
+            AppleMusicServiceProvider service = new AppleMusicServiceProvider();
             string expected = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyMusic) + "\\iTunes\\iTunes Music Library.xml";
 
             // Act
-            var actual = parser.Path;
+            var actual = service.Path;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.Parser(string)"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.AppleMusicServiceProvider(string)"/> constructor.
         /// </summary>
         [TestMethod]
         public void InstantiateWithPathReturnSamePath()
         {
             // Arrange
-            Parser parser = new Parser("iTunes Music Library.xml");
+            AppleMusicServiceProvider service = new AppleMusicServiceProvider("iTunes Music Library.xml");
             string expected = "iTunes Music Library.xml";
 
             // Act
-            string actual = parser.Path;
+            string actual = service.Path;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.LoadAndParse()"/> method.
+        /// Test the <see cref="AppleMusicServiceProvider.Init()"/> method.
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(XmlFileReadException))]
-        public void InstantiateParserWithInvalidPathThenInvokeLoadAndParseShouldReturnAnException()
+        public void InstantiateServiceWithInvalidPathThenInvokeInitShouldReturnAnException()
         {
             // Arrange
-            Parser parser = new Parser("this file does not exist");
+            IMusicService service = new AppleMusicServiceProvider("this file does not exist");
 
             // Act (assert part is in test method declaration tag)
-            parser.LoadAndParse();
+            service.Init();
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.LoadAndParse()"/> method.
+        /// Test the <see cref="AppleMusicServiceProvider.Init()"/> method.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturn8Tracks()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturn8Tracks()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             int expected = 8;
 
             // Act
-            int actual = parser.GetTracks().Length;
+            int actual = service.GetTracks().Length;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex0()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex0()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(80, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 1, "The Legend Of Zelda 25th Anniversary Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/01%20The%20Legend%20Of%20Zelda%2025th%20Annivers.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[0];
+            Track actual = service.GetTracks()[0];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex1()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex1()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(82, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 2, "Kakariko Village (Twilight Princess Theme)", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/02%20Kakariko%20Village%20(Twilight%20Prince.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[1];
+            Track actual = service.GetTracks()[1];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex2()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex2()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(84, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 3, "The Wind Waker Symphonic Movement", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/03%20The%20Wind%20Waker%20Symphonic%20Movement.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[2];
+            Track actual = service.GetTracks()[2];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex3()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex3()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(86, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 4, "Gerudo Valley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/04%20Gerudo%20Valley.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[3];
+            Track actual = service.GetTracks()[3];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex4()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex4()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(88, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 5, "Great Fairy's Fountain Theme", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/05%20Great%20Fairy's%20Fountain%20Theme.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[4];
+            Track actual = service.GetTracks()[4];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex5()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex5()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(90, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 6, "Twilight Princess Symphonic Movement", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/06%20Twilight%20Princess%20Symphonic%20Movem.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[5];
+            Track actual = service.GetTracks()[5];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex6()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex6()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(92, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 7, "The Legend Of Zelda Main Theme Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/07%20The%20Legend%20Of%20Zelda%20Main%20Theme%20Me.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[6];
+            Track actual = service.GetTracks()[6];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnAGivenTrackAtIndex7()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex7()
         {
             // Arrange
-            Parser parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track expected = new Track(94, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 8, "Ballad Of The Goddess From Skyward Sword", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/08%20Ballad%20Of%20The%20Goddess%20From%20Skywar.m4a");
 
             // Act
-            Track actual = parser.GetTracks()[7];
+            Track actual = service.GetTracks()[7];
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnYoannName()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnYoannName()
         {
             // Arrange
-            var parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             string expected = "Yoann";
 
             // Act
-            string actual = parser.GetPlaylistFolders()[0].Name;
+            string actual = service.GetPlaylistFolders()[0].Name;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnADACB1B93A6C37C3Identifier()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnADACB1B93A6C37C3Identifier()
         {
             // Arrange
-            var parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             string expected = "ADACB1B93A6C37C3";
 
             // Act
-            string actual = parser.GetPlaylistFolders()[0].Identifier;
+            string actual = service.GetPlaylistFolders()[0].Identifier;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Test the <see cref="Parser.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
         /// </summary>
         [TestMethod]
-        public void InstantiateParserWithValidPathThenInvokeLoadAndParseShouldReturnThisPlaylistFolder()
+        public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnThisPlaylistFolder()
         {
             // Arrange
-            var parser = new Parser("../../../iTunes Music Library.xml");
-            parser.LoadAndParse();
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
             Track[] tracks = new Track[]
             {
                 new Track(80, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 1, "The Legend Of Zelda 25th Anniversary Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/01%20The%20Legend%20Of%20Zelda%2025th%20Annivers.m4a"),
@@ -299,7 +301,7 @@ namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Test
             expected.Add(playlist);
 
             // Act
-            PlaylistFolder actual = parser.GetPlaylistFolders()[0];
+            PlaylistFolder actual = service.GetPlaylistFolders()[0];
 
             // Assert
             Assert.AreEqual(expected, actual);

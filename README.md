@@ -35,7 +35,7 @@ A music tools and workflow management
 
 ## Requirements
 
-* .NET Core 3.1 SDK (https://dotnet.microsoft.com/download)
+* .NET 5.0 SDK (https://dotnet.microsoft.com/download/dotnet/5.0)
 * Visual Studio Code (https://code.visualstudio.com/Download)
 
 ## Project import

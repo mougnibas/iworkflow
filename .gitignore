@@ -19,6 +19,9 @@
 obj/
 bin/
 
+# Visual Studio stuff
+.vs/
+
 # Test and code Coverage stuff
 CoverageResults/
 TestResults/

@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser
+namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService
 {
     using System;
     using System.Collections.Generic;
@@ -23,13 +23,14 @@ namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser
     using System.IO;
     using System.Xml;
 
-    using Mougnibas.MusicWorkflow.Database;
-    using Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Exceptions;
+    using Mougnibas.MusicWorkflow.Contract.Model;
+    using Mougnibas.MusicWorkflow.Contract.Service;
+    using Mougnibas.MusicWorkflow.Provider.AppleMusicService.Exceptions;
 
     /// <summary>
-    /// A iTunes Library XML Parser class.
+    /// An Apple iTunes Library XML Parser class.
     /// </summary>
-    public class Parser
+    public class AppleMusicServiceProvider : IMusicService
     {
         /// <summary>
         /// The tracks of the iTunes Music Library XML file.
@@ -42,9 +43,9 @@ namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser
         private List<PlaylistFolder> playlistFolders;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// Initializes a new instance of the <see cref="AppleMusicServiceProvider"/> class.
         /// </summary>
-        public Parser()
+        public AppleMusicServiceProvider()
         {
             // Set the default iTunes Music Library.xml file to use.
             // Example : "C:\\Users\\Yoann\\Music\\iTunes\\iTunes Music Library.xml"
@@ -52,11 +53,12 @@ namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// Initializes a new instance of the <see cref="AppleMusicServiceProvider"/> class.
         /// </summary>
         /// <param name="path">The path to the iTunes Music Library XML file.</param>
-        public Parser(string path)
+        public AppleMusicServiceProvider(string path)
         {
+            // Use the given path as reference
             this.Path = path;
         }
 
@@ -68,7 +70,7 @@ namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser
         /// <summary>
         /// Load the XML content, then parse it.
         /// </summary>
-        public void LoadAndParse()
+        public void Init()
         {
             // Read the content.
             string xmlContent = this.ReadToEnd();

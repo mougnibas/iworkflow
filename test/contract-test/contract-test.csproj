@@ -2,8 +2,8 @@
 
   <!-- Base properties -->
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Test</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Mougnibas.MusicWorkflow.Contract.Test</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -20,8 +20,8 @@
   <PropertyGroup>
     <Company>N.A.</Company>
     <Copyright>2020 Yoann MOUGNIBAS</Copyright>
-    <Description>iTunes Library XML parser sub-project tests, from MusicWorkflow project.</Description>
-    <Product>MusicWorkflow (iTunes Library XML parser test module)</Product>
+    <Description>Contract sub-project test, from MusicWorkflow project.</Description>
+    <Product>MusicWorkflow (contract test module)</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
   </PropertyGroup>
@@ -33,7 +33,7 @@
 
   <!-- Private dependency -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\itunes-library-xml-parser\itunes-library-xml-parser.csproj" />
+    <ProjectReference Include="..\..\src\contract\contract.csproj" />
   </ItemGroup>
 
   <!-- FxCop Analyzer -->
@@ -65,5 +65,6 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
   </ItemGroup>
+
 
 </Project>

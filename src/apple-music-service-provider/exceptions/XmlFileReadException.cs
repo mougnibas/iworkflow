@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.ITunesLibraryXMLParser.Exceptions
+namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Exceptions
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
