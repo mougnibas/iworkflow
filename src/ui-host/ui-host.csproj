@@ -59,6 +59,9 @@
   <!-- Sonar stuff -->
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\.sonarlint\music-workflowcsharp.ruleset</CodeAnalysisRuleSet>
+    <SonarQubeSetting Include="sonar.coverage.exclusions">
+      <Value>*.cs</Value>
+    </SonarQubeSetting>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\.sonarlint\music-workflow\CSharp\SonarLint.xml" Link="SonarLint.xml" />
