@@ -19,6 +19,9 @@ namespace Mougnibas.MusicWorkflow.UI
 {
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+    using Microsoft.Extensions.DependencyInjection;
+    using Mougnibas.MusicWorkflow.Contract.Service;
+    using Mougnibas.MusicWorkflow.Provider.Fake;
 
     /// <summary>
     /// Blazor web assembly entry point class.
@@ -32,9 +35,25 @@ namespace Mougnibas.MusicWorkflow.UI
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public static async Task Main(string[] args)
         {
+            // Create a default builder
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+            // Add a service
+            // TODO Use a setting to register the appropriate implementation given the context
+            builder.Services.AddSingleton<IMusicService, FakeMusicService>();
+
+            // Use this root component
             builder.RootComponents.Add<App>("#app");
-            await builder.Build().RunAsync().ConfigureAwait(true);
+
+            // Build it
+            var host = builder.Build();
+
+            // Initialize the service
+            var musicService = host.Services.GetRequiredService<IMusicService>();
+            musicService.Init();
+
+            // Run it (async)
+            await host.RunAsync().ConfigureAwait(true);
         }
     }
 }

@@ -40,5 +40,19 @@ namespace Mougnibas.MusicWorkflow.Contract.Service
         /// </summary>
         /// <returns>all The playlist folders.</returns>
         PlaylistFolder[] GetPlaylistFolders();
+
+        /// <summary>
+        /// Get the playlist folder identified by its identifier.
+        /// </summary>
+        /// <param name="identifier">The playlist folder identifier.</param>
+        /// <returns>The playlist folder searched, or null if not found.</returns>
+        PlaylistFolder GetPlaylistFolder(string identifier);
+
+        /// <summary>
+        /// Get the playlist identified by its identifier.
+        /// </summary>
+        /// <param name="identifier">The playlist identifier.</param>
+        /// <returns>The playlist searched, or null if not found.</returns>
+        Playlist GetPlaylist(string identifier);
     }
 }

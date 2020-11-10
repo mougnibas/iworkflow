@@ -1,0 +1,29 @@
+﻿@page "/playlistfolders"
+@inject IMusicService service
+
+<p>This is the playlist folders component.</p>
+
+Playlist folders :
+<ul>
+    @foreach (var playlistFolder in playlistFolders)
+    {
+        <li><a href="/playlists/@playlistFolder.Identifier">@playlistFolder.Name</a></li>
+    }
+</ul>
+
+@code {
+
+    /// <summary>
+    /// The playlist folders.
+    /// </summary>
+    private PlaylistFolder[] playlistFolders;
+
+    /// <summary>
+    /// Method invoked when the component is ready to start.
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        // Get all playlist folders from the service.
+        playlistFolders = service.GetPlaylistFolders();
+    }
+}

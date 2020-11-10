@@ -31,12 +31,13 @@
   <!-- Private dependency -->
   <ItemGroup>
     <ProjectReference Include="..\contract\contract.csproj" />
+    <ProjectReference Include="..\fake-music-service-provider\fake-music-service-provider.csproj" />
   </ItemGroup>
 
   <!-- Blazor related public dependencies -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0-rc.1.20451.17" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0-rc.1.20451.17" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0-rc.2.20475.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0-rc.2.20475.17" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- FxCop Analyzer -->

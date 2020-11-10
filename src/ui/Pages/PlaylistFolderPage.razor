@@ -1,0 +1,44 @@
+﻿@page "/playlists/{playlistFolderIdentifier}"
+@inject IMusicService service
+
+<p>This is the playlists component.</p>
+
+@if (playlistFolder == null)
+{
+    <p>This playlist folder was not found.</p>
+}
+else
+{
+    <p>Playlists (from @playlistFolder.Name):</p>
+    <ul>
+    @foreach (var playlist in playlistFolder.Playlists)
+    {
+        <li><a href="/playlist/@playlist.Identifier">@playlist.Name</a></li>
+    }
+    </ul>
+}
+
+@code {
+
+    /// <summary>
+    /// The requested playlist folder identifier.
+    /// </summary>
+    /// <value>The requested playlist folder identifier.</value>
+    [Parameter]
+    public string playlistFolderIdentifier { get; set; }
+
+    /// <summary>
+    /// The requested playlist folder, or null if not found.
+    /// </summary>
+    private PlaylistFolder playlistFolder;
+
+    /// <summary>
+    /// Method called every time a parameter is set.
+    /// </summary>
+    protected override void OnParametersSet()
+    {
+        // Get the requested playlist folder,
+        // or get a null reference if it is not found.
+        playlistFolder = service.GetPlaylistFolder(playlistFolderIdentifier);
+    }
+}

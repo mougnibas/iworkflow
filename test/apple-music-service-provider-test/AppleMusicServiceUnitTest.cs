@@ -97,7 +97,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex0()
@@ -115,7 +115,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex1()
@@ -133,7 +133,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex2()
@@ -151,7 +151,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex3()
@@ -169,7 +169,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex4()
@@ -187,7 +187,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex5()
@@ -205,7 +205,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex6()
@@ -223,7 +223,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetTracks()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex7()
@@ -241,7 +241,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnYoannName()
@@ -259,7 +259,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnADACB1B93A6C37C3Identifier()
@@ -277,7 +277,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         }
 
         /// <summary>
-        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> constructor.
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolders()"/> method.
         /// </summary>
         [TestMethod]
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnThisPlaylistFolder()
@@ -305,6 +305,42 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
 
             // Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylistFolder(string)"/> method.
+        /// </summary>
+        [TestMethod]
+        public void InstantiateServiceWithValidPathThenInvokeGetPlaylistFolderShouldReturnSameInstance()
+        {
+            // Arrange
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
+            PlaylistFolder expected = service.GetPlaylistFolders()[0];
+
+            // Act
+            PlaylistFolder actual = service.GetPlaylistFolder("ADACB1B93A6C37C3");
+
+            // Assert
+            Assert.AreSame(expected, actual);
+        }
+
+        /// <summary>
+        /// Test the <see cref="AppleMusicServiceProvider.GetPlaylist(string)"/> method.
+        /// </summary>
+        [TestMethod]
+        public void InstantiateServiceWithValidPathThenInvokeGetPlaylistShouldReturnSameInstance()
+        {
+            // Arrange
+            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            service.Init();
+            Playlist expected = service.GetPlaylistFolders()[0].Playlists[0];
+
+            // Act
+            Playlist actual = service.GetPlaylist("88A4FA1A260043F3");
+
+            // Assert
+            Assert.AreSame(expected, actual);
         }
     }
 }

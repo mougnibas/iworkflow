@@ -43,6 +43,16 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService
         private List<PlaylistFolder> playlistFolders;
 
         /// <summary>
+        /// The playlist folders, by identifier.
+        /// </summary>
+        private Dictionary<string, PlaylistFolder> playlistFoldersByIdentifier;
+
+        /// <summary>
+        /// The playlists, by identifier.
+        /// </summary>
+        private Dictionary<string, Playlist> playlistsByIdentifier;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AppleMusicServiceProvider"/> class.
         /// </summary>
         public AppleMusicServiceProvider()
@@ -84,6 +94,9 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService
             this.playlistFolders = new List<PlaylistFolder>();
             var playlistFoldersArray = MakePlaylistFoldersFromRawXml(trackDict, xmlContent);
             this.playlistFolders.AddRange(playlistFoldersArray);
+
+            // Populate dictionaries
+            this.PopulateDictionaries();
         }
 
         /// <summary>
@@ -102,6 +115,26 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService
         public PlaylistFolder[] GetPlaylistFolders()
         {
             return this.playlistFolders.ToArray();
+        }
+
+        /// <summary>
+        /// Get the playlist folder identified by its identifier.
+        /// </summary>
+        /// <param name="identifier">The playlist folder identifier.</param>
+        /// <returns>The playlist folder searched, or null if not found.</returns>
+        public PlaylistFolder GetPlaylistFolder(string identifier)
+        {
+            return this.playlistFoldersByIdentifier[identifier];
+        }
+
+        /// <summary>
+        /// Get the playlist identified by its identifier.
+        /// </summary>
+        /// <param name="identifier">The playlist identifier.</param>
+        /// <returns>The playlist searched, or null if not found.</returns>
+        public Playlist GetPlaylist(string identifier)
+        {
+            return this.playlistsByIdentifier[identifier];
         }
 
         /// <summary>
@@ -368,6 +401,30 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService
 
             // Return the result.
             return xmlContent;
+        }
+
+        /// <summary>
+        /// Populate playlist folders and playlists dictionaries.
+        /// </summary>
+        private void PopulateDictionaries()
+        {
+            // Instantiate the dictionaries
+            this.playlistFoldersByIdentifier = new Dictionary<string, PlaylistFolder>();
+            this.playlistsByIdentifier = new Dictionary<string, Playlist>();
+
+            // For each playlist folder
+            foreach (var playlistFolder in this.playlistFolders)
+            {
+                // Add the current playlist folder to the dictionary
+                this.playlistFoldersByIdentifier.Add(playlistFolder.Identifier, playlistFolder);
+
+                // For each playlist in the current playlist folder
+                foreach (var playlist in playlistFolder.Playlists)
+                {
+                    // Add the current playlist to the dictionary
+                    this.playlistsByIdentifier.Add(playlist.Identifier, playlist);
+                }
+            }
         }
     }
 }

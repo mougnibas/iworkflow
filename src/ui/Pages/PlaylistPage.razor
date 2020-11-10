@@ -1,0 +1,44 @@
+﻿@page "/playlist/{playlistIdentifier}"
+@inject IMusicService service
+
+<p>This is the playlist component.</p>
+
+@if (playlist == null)
+{
+    <p>This playlist was not found.</p>
+}
+else
+{
+    <p>Playlist @playlist.Name tracks :</p>
+    <ul>
+    @foreach (var track in playlist.Tracks)
+    {
+        <li>@track.TrackNumber - @track.Name (by @track.Artist, from @track.AlbumArtist / @track.Album)</li>
+    }
+    </ul>
+}
+
+@code {
+
+    /// <summary>
+    /// The requested playlist identifier.
+    /// </summary>
+    /// <value>The requested playlist identifier.</value>
+    [Parameter]
+    public string playlistIdentifier { get; set; }
+
+    /// <summary>
+    /// The requested playlist, or null if not found.
+    /// </summary>
+    private Playlist playlist;
+
+    /// <summary>
+    /// Method called every time a parameter is set.
+    /// </summary>
+    protected override void OnParametersSet()
+    {
+        // Get the requested playlist,
+        // or get a null reference if it is not found.
+        playlist = service.GetPlaylist(playlistIdentifier);
+    }
+}

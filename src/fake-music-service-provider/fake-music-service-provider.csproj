@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <!-- Base properties -->
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.UIHost</RootNamespace>
+    <RootNamespace>Mougnibas.MusicWorkflow.Provider.Fake</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -11,8 +11,8 @@
   <PropertyGroup>
     <Company>N.A.</Company>
     <Copyright>2020 Yoann MOUGNIBAS</Copyright>
-    <Description>UI-Host sub-project, from MusicWorkflow project.</Description>
-    <Product>MusicWorkflow (ui-host module)</Product>
+    <Description>Fake Music Service Provider sub-project, from MusicWorkflow project.</Description>
+    <Product>MusicWorkflow (Fake Music Service Provider module)</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
   </PropertyGroup>
@@ -20,22 +20,22 @@
   <!-- NuGet metadata properties -->
   <PropertyGroup>
     <PackageVersion>1.0.0-alpha</PackageVersion>
-    <PackageId>MusicWorkflow-UI-Host</PackageId>
-    <Title>MusicWorkflow UI-Host</Title>
+    <PackageId>MusicWorkflow-FakeMusicServiceProvider</PackageId>
+    <Title>MusicWorkflow Fake Music Service Provider</Title>
     <Authors>Yoann MOUGNIBAS</Authors>
-    <PackageDescription>UI-Host sub-project, from MusicWorkflow project.</PackageDescription>
+    <PackageDescription>Fake Music Service Provider sub-project, from MusicWorkflow project.</PackageDescription>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/mougnibas/music-workflow</RepositoryUrl>
   </PropertyGroup>
 
-<!-- Private dependency -->
+  <!-- Private dependency -->
   <ItemGroup>
-    <ProjectReference Include="..\ui\ui.csproj" />
+    <ProjectReference Include="..\contract\contract.csproj" />
   </ItemGroup>
 
-  <!-- Blazor related public dependencies -->
+  <!-- This assembly can be used by web assembly (browser) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0-rc.2.20475.17" />
+    <SupportedPlatform Include="browser" />
   </ItemGroup>
 
   <!-- FxCop Analyzer -->
