@@ -28,3 +28,6 @@ TestResults/
 
 # Test stuff
 *.trx
+
+# Sonarlint stuff
+.sonarlint/

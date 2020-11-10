@@ -56,4 +56,12 @@
     <AdditionalFiles Include="../../stylecop.json" />
   </ItemGroup>
 
+  <!-- Sonar stuff -->
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\music-workflowcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\music-workflow\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+
 </Project>
