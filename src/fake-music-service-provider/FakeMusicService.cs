@@ -42,7 +42,7 @@ namespace Mougnibas.MusicWorkflow.Provider.Fake
         public void Init()
         {
             // Create fake tracks.
-            Track[] tracks = new Track[]
+            Track[] zeldaTracks = new Track[]
             {
                 new Track(80, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 1, "The Legend Of Zelda 25th Anniversary Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/01%20The%20Legend%20Of%20Zelda%2025th%20Annivers.m4a"),
                 new Track(82, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 2, "Kakariko Village (Twilight Princess Theme)", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/02%20Kakariko%20Village%20(Twilight%20Prince.m4a"),
@@ -58,11 +58,11 @@ namespace Mougnibas.MusicWorkflow.Provider.Fake
             PlaylistFolder playlistFolder = new PlaylistFolder("ADACB1B93A6C37C3", "Yoann");
 
             // Create a fake playlist and associate it to the previously created playlist folder.
-            Playlist playlist = new Playlist(playlistFolder, "88A4FA1A260043F3", "My awesome TLOZ playlist", tracks);
+            Playlist playlist = new Playlist(playlistFolder, "88A4FA1A260043F3", "My awesome TLOZ playlist", zeldaTracks);
             playlistFolder.Add(playlist);
 
             // Reference members
-            this.tracks = tracks;
+            this.tracks = zeldaTracks;
             this.playlistFolders = new PlaylistFolder[] { playlistFolder };
         }
 
