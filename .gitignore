@@ -30,4 +30,5 @@ TestResults/
 *.trx
 
 # Sonarlint stuff
-.sonarlint/
+.sonarlint/music-workflow/
+.sonarlint/music-workflow.slconfig
