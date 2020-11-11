@@ -21,7 +21,6 @@ namespace Mougnibas.MusicWorkflow.Provider.Fake.Test
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Mougnibas.MusicWorkflow.Contract.Model;
     using Mougnibas.MusicWorkflow.Contract.Service;
-    using Mougnibas.MusicWorkflow.Provider.Fake;
 
     /// <summary>
     /// FakeMusicServiceUnitTest unit test class.
@@ -37,6 +36,7 @@ namespace Mougnibas.MusicWorkflow.Provider.Fake.Test
         {
             // Arrange and act (Assert is done by not defining an expected exception)
             IMusicService service = new FakeMusicService();
+            Assert.IsNotNull(service);
         }
 
         /// <summary>
