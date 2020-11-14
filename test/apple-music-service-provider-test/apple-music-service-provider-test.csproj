@@ -7,6 +7,15 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <!-- Test related properties -->
+  <PropertyGroup>
+    <CollectCoverage>true</CollectCoverage>
+    <CoverletOutputFormat>json,cobertura,opencover</CoverletOutputFormat>
+    <CoverletOutput>../../CoverageResults/</CoverletOutput>
+    <MergeWith>../../CoverageResults/coverage.json</MergeWith>
+    <Threshold>100</Threshold>
+  </PropertyGroup>
+
   <!-- Assembly metadata properties -->
   <PropertyGroup>
     <Company>N.A.</Company>
@@ -43,6 +52,11 @@
     </PackageReference>
     <None Remove="stylecop.json" />
     <AdditionalFiles Include="../../stylecop.json" />
+  </ItemGroup>
+
+  <!-- Code coverage -->
+  <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="2.9.0" />
   </ItemGroup>
 
   <!-- MSTest -->
