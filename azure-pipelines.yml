@@ -46,12 +46,13 @@ stages:
         steps:
           # Install a given version of dotnet SDK
           # See available versions at https://github.com/dotnet/core/blob/master/release-notes/releases-index.json
-          - task: UseDotNet@2
-            name: 'sdk_install'
-            inputs:
-              packageType: sdk
-              version: 5.0.100
-              installationPath: $(Agent.ToolsDirectory)/dotnet
+          # Disable : Rely on default agent installations
+          #- task: UseDotNet@2
+          #  name: 'sdk_install'
+          #  inputs:
+          #    packageType: sdk
+          #    version: 5.0.100
+          #    installationPath: $(Agent.ToolsDirectory)/dotnet
           # Use ".NET Core CLI" task to restore
           # It is recommended that an explicit 'dotnet restore' step be used to restore packages.
           - task: DotNetCoreCLI@2
