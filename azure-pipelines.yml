@@ -84,12 +84,6 @@ stages:
             inputs:
               command: 'test'
               arguments: '--configuration $(BuildConfiguration) --logger trx'
-          # Cobertura Code Coverage results need to be published using dedicated "Publish Code Coverage Results" task
-          - task: PublishCodeCoverageResults@1
-            inputs:
-              codeCoverageTool: 'cobertura'
-              summaryFileLocation: '$(System.DefaultWorkingDirectory)/CoverageResults/coverage.cobertura.xml'
-            name: 'coverage_publish'
           # Sonar : Run Code Analysis
           - task: SonarCloudAnalyze@1
             name: 'sonar_run'
