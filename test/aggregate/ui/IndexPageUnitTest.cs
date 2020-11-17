@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.UI.Test
+namespace Mougnibas.MusicWorkflow.Test.UI
 {
     using Bunit;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

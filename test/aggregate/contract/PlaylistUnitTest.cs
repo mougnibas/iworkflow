@@ -15,11 +15,12 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.Contract.Model.Test
+namespace Mougnibas.MusicWorkflow.Test.Contract.Model
 {
     using System;
     using System.Collections.ObjectModel;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Mougnibas.MusicWorkflow.Contract.Model;
 
     /// <summary>
     /// Playlist unit test class.

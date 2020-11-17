@@ -3,17 +3,15 @@
   <!-- Base properties -->
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test</RootNamespace>
+    <RootNamespace>Mougnibas.MusicWorkflow.Test</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <!-- Test related properties -->
   <PropertyGroup>
     <CollectCoverage>true</CollectCoverage>
-    <CoverletOutputFormat>json,cobertura,opencover</CoverletOutputFormat>
-    <CoverletOutput>../../CoverageResults/</CoverletOutput>
-    <MergeWith>../../CoverageResults/coverage.json</MergeWith>
-    <Threshold>100</Threshold>
+    <CoverletOutputFormat>cobertura,opencover</CoverletOutputFormat>
+    <CoverletOutput>./TestResults/</CoverletOutput>
   </PropertyGroup>
 
   <!-- Assembly metadata properties -->
@@ -31,16 +29,29 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <!-- Private dependency -->
+  <!-- Private dependencies -->
   <ItemGroup>
     <ProjectReference Include="..\..\src\apple-music-service-provider\apple-music-service-provider.csproj" />
+    <ProjectReference Include="..\..\src\contract\contract.csproj" />
+    <ProjectReference Include="..\..\src\fake-music-service-provider\fake-music-service-provider.csproj" />
+    <ProjectReference Include="..\..\src\ui\ui.csproj" />
   </ItemGroup>
 
-  <!-- MSTest -->
+  <!-- MSTest dependencies -->
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+  </ItemGroup>
+
+  <!-- Third-party code coverage dependency -->
+  <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="2.9.0" />
+  </ItemGroup>
+
+  <!-- Blazor Unit Test dependency -->
+  <ItemGroup>
+    <PackageReference Include="bunit.web" Version="1.0.0-beta-10" />
   </ItemGroup>
 
 </Project>

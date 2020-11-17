@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
+namespace Mougnibas.MusicWorkflow.Test.Provider.AppleMusicService
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -85,7 +85,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturn8Tracks()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             int expected = 8;
 
@@ -103,7 +103,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex0()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(80, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 1, "The Legend Of Zelda 25th Anniversary Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/01%20The%20Legend%20Of%20Zelda%2025th%20Annivers.m4a");
 
@@ -121,7 +121,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex1()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(82, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 2, "Kakariko Village (Twilight Princess Theme)", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/02%20Kakariko%20Village%20(Twilight%20Prince.m4a");
 
@@ -139,7 +139,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex2()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(84, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 3, "The Wind Waker Symphonic Movement", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/03%20The%20Wind%20Waker%20Symphonic%20Movement.m4a");
 
@@ -157,7 +157,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex3()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(86, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 4, "Gerudo Valley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/04%20Gerudo%20Valley.m4a");
 
@@ -175,7 +175,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex4()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(88, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 5, "Great Fairy's Fountain Theme", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/05%20Great%20Fairy's%20Fountain%20Theme.m4a");
 
@@ -193,7 +193,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex5()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(90, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 6, "Twilight Princess Symphonic Movement", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/06%20Twilight%20Princess%20Symphonic%20Movem.m4a");
 
@@ -211,7 +211,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex6()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(92, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 7, "The Legend Of Zelda Main Theme Medley", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/07%20The%20Legend%20Of%20Zelda%20Main%20Theme%20Me.m4a");
 
@@ -229,7 +229,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnAGivenTrackAtIndex7()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track expected = new Track(94, "Koji Kondo", "The Legend Of Zelda 25th Anniversary Special Orchestra CD", 8, "Ballad Of The Goddess From Skyward Sword", "Koji Kondo", "file://localhost/C:/Users/Yoann/Music/iTunes/iTunes%20Media/Music/Koji%20Kondo/The%20Legend%20Of%20Zelda%2025th%20Anniversary%20Spe/08%20Ballad%20Of%20The%20Goddess%20From%20Skywar.m4a");
 
@@ -247,7 +247,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnYoannName()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             string expected = "Yoann";
 
@@ -265,7 +265,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnADACB1B93A6C37C3Identifier()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             string expected = "ADACB1B93A6C37C3";
 
@@ -283,7 +283,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeInitShouldReturnThisPlaylistFolder()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Track[] tracks = new Track[]
             {
@@ -314,7 +314,8 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeGetPlaylistFolderShouldReturnSameInstance()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
+
             service.Init();
             PlaylistFolder expected = service.GetPlaylistFolders()[0];
 
@@ -332,7 +333,7 @@ namespace Mougnibas.MusicWorkflow.Provider.AppleMusicService.Test
         public void InstantiateServiceWithValidPathThenInvokeGetPlaylistShouldReturnSameInstance()
         {
             // Arrange
-            IMusicService service = new AppleMusicServiceProvider("../../../iTunes Music Library.xml");
+            IMusicService service = new AppleMusicServiceProvider("../../../apple-music-service-provider/iTunes Music Library.xml");
             service.Init();
             Playlist expected = service.GetPlaylistFolders()[0].Playlists[0];
 

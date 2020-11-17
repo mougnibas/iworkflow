@@ -44,7 +44,6 @@ namespace Mougnibas.MusicWorkflow.UIHost
         /// Use this method to add services to the container.
         /// </summary>
         /// <param name="services">The services to add.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This method gets called by the runtime.")]
         public void ConfigureServices(IServiceCollection services)
         {
             // This method gets called by the runtime.
@@ -57,7 +56,6 @@ namespace Mougnibas.MusicWorkflow.UIHost
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
         /// <param name="app">The application builder.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This method gets called by the runtime.")]
         public void Configure(IApplicationBuilder app)
         {
             app.UseExceptionHandler("/Error");

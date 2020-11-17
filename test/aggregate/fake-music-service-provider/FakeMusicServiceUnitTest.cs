@@ -15,12 +15,13 @@
 // You should have received a copy of the GNU General Public License
 // along with MusicWorkflow.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Mougnibas.MusicWorkflow.Provider.Fake.Test
+namespace Mougnibas.MusicWorkflow.Test.Provider.Fake
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Mougnibas.MusicWorkflow.Contract.Model;
     using Mougnibas.MusicWorkflow.Contract.Service;
+    using Mougnibas.MusicWorkflow.Provider.Fake;
 
     /// <summary>
     /// FakeMusicServiceUnitTest unit test class.
