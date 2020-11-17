@@ -26,5 +26,24 @@ name: Main-CI
 on:
   pull_request:
     branches:
-      - 'master'
-      - 'feature/*'
+      - master
+      - feature/*
+
+jobs:
+  build:
+
+    # Use a "Windows Server 2019" runner (Microsoft based)
+    runs-on: windows-2019
+
+    # This build will :
+    # - install a given .NET 5 SDK
+    # - run 'dotnet restore' command on solution
+    # - run 'dotnet build --configuration Release' command on solution
+    # - run 'dotnet test  --configuration Release --logger trx' command on solution
+
+
+    # build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
+    steps:
+
+      - name: dotnet_restore
+        run: dotnet restore
