@@ -36,7 +36,7 @@ env:
   DOTNET_NOLOGO: yes              # Disable .NET welcome and telemetry messages displayed on first ru
   DOTNET_CLI_TELEMETRY_OPTOUT: no # Disable .NET data tools usage collected and sent to Microsoft
 
-# This following builds will run the following commands on solution :
+# This following jobs will run the following commands on solution :
 # - 'dotnet restore'
 # - 'dotnet build --configuration Release'
 # - 'dotnet test  --configuration Release --logger trx'
@@ -45,9 +45,10 @@ env:
 jobs:
 
   linux-build:
-
+  
     # Use a "Ubuntu 20.04" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
+    name: Linux build based on Ubuntu 20.04 (Github-hosted) runner
     runs-on: ubuntu-20.04
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
@@ -94,6 +95,7 @@ jobs:
 
     # Use a "Windows Server 2019" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
+    name: Windows build based on Windows Server 2019 (Github-hosted) runner
     runs-on: windows-2019
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
