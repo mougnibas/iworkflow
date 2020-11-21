@@ -29,16 +29,22 @@ on:
       - master
       - feature/*
 
+# Environment variables
+env: 
+  BUILD_CONFIGURATION: Release
+
 jobs:
+
+  # This windows build will run the following commands on solution :
+  # - 'dotnet restore'
+  # - 'dotnet build --configuration Release'
+  # - 'dotnet test  --configuration Release --logger trx'
   windows-build:
 
     # Use a "Windows Server 2019" runner (Microsoft based)
     runs-on: windows-2019
 
-    # This build will :
-    # - run 'dotnet restore' command on solution
-    # - run 'dotnet build --configuration Release' command on solution
-    # - run 'dotnet test  --configuration Release --logger trx' command on solution
+    
 
     # build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
     steps:
@@ -55,4 +61,8 @@ jobs:
 
       # Build the solution
       - name: dotnet_build
-        run:  dotnet build --configuration 'Release'
+        run:  dotnet build --configuration '$BUILD_CONFIGURATION'
+
+      # Test the solution (unit test and code coverage)
+      - name: dotnet_test
+        run:  dotnet test --configuration '$BUILD_CONFIGURATION' --logger trx
