@@ -30,6 +30,12 @@ on:
       - master
       - feature/*
 
+# Use some environment variables
+# Reference : https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet#environment-variables
+env:
+  DOTNET_NOLOGO: yes              # Disable .NET welcome and telemetry messages displayed on first ru
+  DOTNET_CLI_TELEMETRY_OPTOUT: no # Disable .NET data tools usage collected and sent to Microsoft
+
 jobs:
 
   # This windows build will run the following commands on solution :
