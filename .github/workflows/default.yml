@@ -51,7 +51,7 @@ jobs:
     name: Linux build
     runs-on: ubuntu-20.04
 
-    # Use a classic "checkout/restore/build/test/sonar" workflow.
+    # Use a classic "checkout/restore/build/test" workflow.
     steps:
 
       # Use this action to checkout the current git repository.
@@ -87,6 +87,14 @@ jobs:
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
     steps:
+
+      # Install a specific Java SDK (LTS).
+      # Use version 11.0.
+      # Defaults values are JDK package and x64 architecture.
+      # Reference : https://github.com/marketplace/actions/setup-java-jdk#basic
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11.0.x'
 
       # Use this action to checkout the current git repository.
       # Default value use "${{ github.repository }}" as repository
