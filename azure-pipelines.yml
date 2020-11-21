@@ -40,11 +40,10 @@ stages:
 
   # "Build" stage
   # This stage will build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
-  - stage : Setup, restore, build, test and analyse
+  - stage : Build
     jobs:
       - job: build
         steps:
-
           # Install a given version of dotnet SDK
           # See available versions at https://github.com/dotnet/core/blob/master/release-notes/releases-index.json
           - task: UseDotNet@2
@@ -53,14 +52,12 @@ stages:
               packageType: sdk
               version: 5.0.100
               installationPath: $(Agent.ToolsDirectory)/dotnet
-
           # Use ".NET Core CLI" task to restore
           # It is recommended that an explicit 'dotnet restore' step be used to restore packages.
           - task: DotNetCoreCLI@2
             name: 'dotnet_restore'
             inputs:
               command: 'restore'
-
           # Sonar : Prepare Analysis Configuration
           - task: SonarCloudPrepare@1
             name: 'sonar_prepare'
@@ -73,14 +70,12 @@ stages:
               extraProperties: |
                 sonar.cs.opencover.reportsPaths=$(System.DefaultWorkingDirectory)/test/aggregate/TestResults/coverage.opencover.xml
                 sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/*.trx
-
           # Use ".NET Core CLI" task to build
           - task: DotNetCoreCLI@2
             name: 'dotnet_build'
             inputs:
               command: 'build'
               arguments: '--configuration $(BuildConfiguration)'
-
           # Use ".NET Core CLI" task to invoke "test" command
           # Test results will be automatically published (discovered as ".trx" file format)
           # Also collect the code coverage, even if pipeline don't seem to do anything with it.
@@ -89,18 +84,15 @@ stages:
             inputs:
               command: 'test'
               arguments: '--configuration $(BuildConfiguration) --logger trx'
-
           # Cobertura Code Coverage results need to be published using dedicated "Publish Code Coverage Results" task
           - task: PublishCodeCoverageResults@1
-            name: 'coverage_publish'
             inputs:
               codeCoverageTool: 'cobertura'
               summaryFileLocation: '$(System.DefaultWorkingDirectory)/test/aggregate/TestResults/coverage.cobertura.xml'
-
+            name: 'coverage_publish'
           # Sonar : Run Code Analysis
           - task: SonarCloudAnalyze@1
             name: 'sonar_run'
-
           # Sonar : Publish Quality Gate Result
           - task: SonarCloudPublish@1
             name: 'sonar_publish'
