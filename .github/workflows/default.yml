@@ -47,7 +47,7 @@ jobs:
     # Use a "Windows Server 2019" runner (Microsoft based).
     runs-on: windows-2019
 
-    # Use a classic "checkout/restore/build/test" workflow.
+    # Use a classic "checkout/restore/build/test/sonar" workflow.
     steps:
 
       # Use this action to checkout the current git repository.
@@ -67,3 +67,10 @@ jobs:
       # Test the solution.
       - name: dotnet_test
         run:  dotnet test --configuration 'Release' --logger trx
+
+      # Sonar scan
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN  }}
