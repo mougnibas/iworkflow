@@ -19,19 +19,16 @@
 # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
 #
 
-# The name of the workflow
-name: Main-CI
+# The name of the workflow.
+name: Default continuous integration
 
-# Only build pull requests on "master" and "feature/*" target branch
+# This C.I. will only run on pull requests targeting "master" and "feature/*" branches.
+# No C.I. will run on push on branches if they are not under a P.R. workflow.
 on:
   pull_request:
     branches:
       - master
       - feature/*
-
-# Environment variables
-env: 
-  BUILD_CONFIGURATION: Release
 
 jobs:
 
@@ -41,12 +38,10 @@ jobs:
   # - 'dotnet test  --configuration Release --logger trx'
   windows-build:
 
-    # Use a "Windows Server 2019" runner (Microsoft based)
+    # Use a "Windows Server 2019" runner (Microsoft based).
     runs-on: windows-2019
 
-    
-
-    # build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
+    # Use a classic "checkout/restore/build/test" workflow.
     steps:
 
       # Use this action to checkout the current git repository.
@@ -55,18 +50,14 @@ jobs:
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
 
-      # Restore the solution
+      # Restore the solution.
       - name: dotnet_restore
         run:  dotnet restore
 
-      # Build the solution
+      # Build the solution.
       - name: dotnet_build
-        run:  dotnet build --configuration '$BUILD_CONFIGURATION'
-        env: 
-          BUILD_CONFIGURATION: Release
+        run:  dotnet build --configuration 'Release'
 
-      # Test the solution (unit test and code coverage)
+      # Test the solution.
       - name: dotnet_test
-        run:  dotnet test --configuration '$BUILD_CONFIGURATION' --logger trx
-        env: 
-          BUILD_CONFIGURATION: Release
+        run:  dotnet test --configuration 'Release' --logger trx
