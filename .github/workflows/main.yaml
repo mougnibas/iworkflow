@@ -45,5 +45,14 @@ jobs:
     # build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
     steps:
 
+      # Use this action to checkout the current git repository.
+      # Default value use "${{ github.repository }}" as repository
+      # and the event SHA-1 as ref.
+      # Reference documentation : https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v2
+
+      # TODO Install .NET 5 SDK
+
+      # Restore the solution
       - name: dotnet_restore
         run: dotnet restore
