@@ -59,15 +59,15 @@ jobs:
       - uses: actions/checkout@v2
 
       # Restore the solution.
-      - name: dotnet_restore
+      - name: .NET 5 SDK restore command
         run:  dotnet restore
 
       # Build the solution.
-      - name: dotnet_build
+      - name: .NET 5 SDK build command
         run:  dotnet build --configuration 'Release'
 
       # Test the solution.
-      - name: dotnet_test
+      - name: .NET 5 SDK test command
         run:  dotnet test --configuration 'Release' --logger trx
 
       # Sonar scan
@@ -93,13 +93,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Restore the solution.
-      - name: dotnet_restore
+      - name: .NET 5 SDK restore command
         run:  dotnet restore
 
       # Build the solution.
-      - name: dotnet_build
+      - name: .NET 5 SDK build command
         run:  dotnet build --configuration 'Release'
 
       # Test the solution.
-      - name: dotnet_test
+      - name: .NET 5 SDK test command
         run:  dotnet test --configuration 'Release' --logger trx
