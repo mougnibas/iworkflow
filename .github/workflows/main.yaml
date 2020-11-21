@@ -30,17 +30,15 @@ on:
       - feature/*
 
 jobs:
-  build:
+  windows-build:
 
     # Use a "Windows Server 2019" runner (Microsoft based)
     runs-on: windows-2019
 
     # This build will :
-    # - install a given .NET 5 SDK
     # - run 'dotnet restore' command on solution
     # - run 'dotnet build --configuration Release' command on solution
     # - run 'dotnet test  --configuration Release --logger trx' command on solution
-
 
     # build/test/checkstyle/coverage/sonar the sources (and will wait for the quality gate to be published)
     steps:
@@ -51,8 +49,10 @@ jobs:
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
 
-      # TODO Install .NET 5 SDK
-
       # Restore the solution
       - name: dotnet_restore
-        run: dotnet restore
+        run:  dotnet restore
+
+      # Build the solution
+      - name: dotnet_build
+        run:  dotnet build --configuration 'Release'
