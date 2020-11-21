@@ -57,8 +57,11 @@ jobs:
       # Use this action to checkout the current git repository.
       # Default value use "${{ github.repository }}" as repository
       # and the event SHA-1 as ref.
+      # Override the "fetch-depth" configuration from default 1 to 0.
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       # Install .NET 5 SDK
       # Reference : https://github.com/actions/setup-dotnet#usage
@@ -104,8 +107,11 @@ jobs:
       # Use this action to checkout the current git repository.
       # Default value use "${{ github.repository }}" as repository
       # and the event SHA-1 as ref.
+      # Override the "fetch-depth" configuration from default 1 to 0.
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       # Restore the solution.
       - name: .NET 5 SDK restore command
