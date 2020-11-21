@@ -85,6 +85,7 @@ jobs:
             -Dsonar.organization=mougnibas-github
             -Dsonar.projectKey=music-workflow
             -Dsonar.cs.opencover.reportsPaths=test/aggregate/TestResults/coverage.opencover.xml
+            -Dsonar.cs.vstest.reportsPaths=test/aggregate/TestResults/*.trx
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN  }}
