@@ -62,7 +62,11 @@ jobs:
       # Build the solution
       - name: dotnet_build
         run:  dotnet build --configuration '$BUILD_CONFIGURATION'
+        env: 
+          BUILD_CONFIGURATION: Release
 
       # Test the solution (unit test and code coverage)
       - name: dotnet_test
         run:  dotnet test --configuration '$BUILD_CONFIGURATION' --logger trx
+        env: 
+          BUILD_CONFIGURATION: Release
