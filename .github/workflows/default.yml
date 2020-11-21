@@ -57,11 +57,8 @@ jobs:
       # Use this action to checkout the current git repository.
       # Default value use "${{ github.repository }}" as repository
       # and the event SHA-1 as ref.
-      # Override the "fetch-depth" configuration from default 1 to 0.
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       # Install .NET 5 SDK
       # Reference : https://github.com/actions/setup-dotnet#usage
@@ -80,19 +77,6 @@ jobs:
       # Test the solution.
       - name: .NET 5 SDK test command
         run:  dotnet test --configuration 'Release' --logger trx
-
-      # Sonar scan
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        with:
-          args: >
-            -Dsonar.organization=mougnibas-github
-            -Dsonar.projectKey=music-workflow
-            -Dsonar.cs.opencover.reportsPaths=test/aggregate/TestResults/coverage.opencover.xml
-            -Dsonar.cs.vstest.reportsPaths=test/aggregate/TestResults/*.trx
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN  }}
 
   windows-build:
 
@@ -113,14 +97,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Restore the solution.
-      - name: .NET 5 SDK restore command
-        run:  dotnet restore
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-      # Build the solution.
-      - name: .NET 5 SDK build command
-        run:  dotnet build --configuration 'Release'
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v1
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
 
-      # Test the solution.
-      - name: .NET 5 SDK test command
-        run:  dotnet test --configuration 'Release' --logger trx
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        shell: powershell
+        run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN  }}
+        shell: powershell
+        run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"music-workflow" /o:"mougnibas-github" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=test/aggregate/TestResults/coverage.opencover.xml /d:sonar.cs.vstest.reportsPaths=test/aggregate/TestResults/*.trx
+          dotnet restore
+          dotnet build --configuration 'Release'
+          dotnet test --configuration 'Release' --logger trx
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
