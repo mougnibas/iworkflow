@@ -133,6 +133,8 @@ jobs:
           SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN  }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin -k:"music-workflow" -o:"mougnibas-github" -d:sonar.login="${{ secrets.SONAR_TOKEN }}" -d:sonar.host.url="https://sonarcloud.io" -d:sonar.cs.opencover.reportsPaths="test\aggregate\TestResults\coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="test\aggregate\TestResults\*.trx"
-          dotnet test --configuration 'Release' --logger trx
+          .\.sonar\scanner\dotnet-sonarscanner begin -k:"music-workflow" -o:"mougnibas-github" -d:sonar.login="${{ secrets.SONAR_TOKEN }}" -d:sonar.host.url="https://sonarcloud.io"
+          dotnet restore
+          dotnet build --configuration 'Release'
+          dotnet test  --configuration 'Release' --logger trx
           .\.sonar\scanner\dotnet-sonarscanner end -d:sonar.login="${{ secrets.SONAR_TOKEN }}"
