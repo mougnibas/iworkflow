@@ -40,14 +40,15 @@ env:
 # - 'dotnet restore'
 # - 'dotnet build --configuration Release'
 # - 'dotnet test  --configuration Release --logger trx'
-# Linux build can (and will) run a SonarCloud scan, while the windows build cannot. 
+# Linux build install a .NET 5 SDK (while windows build already have it).
+# Linux build can (and will) run a SonarCloud scan, while the windows build cannot.
 jobs:
 
   linux-build:
 
-    # Use a "Ubuntu 18.04" (Github-hosted) runner.
+    # Use a "Ubuntu 20.04" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
     steps:
@@ -57,6 +58,12 @@ jobs:
       # and the event SHA-1 as ref.
       # Reference documentation : https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
+
+      # Install .NET 5 SDK
+      # Reference : https://github.com/actions/setup-dotnet#usage
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
 
       # Restore the solution.
       - name: .NET 5 SDK restore command
