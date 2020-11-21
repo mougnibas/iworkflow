@@ -45,9 +45,9 @@ jobs:
 
   linux-build:
 
-    # Use a "Ubuntu 20.04" (Github-hosted) runner.
+    # Use a "Ubuntu 18.04" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
     steps:
