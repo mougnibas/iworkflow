@@ -48,7 +48,7 @@ jobs:
   
     # Use a "Ubuntu 20.04" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
-    name: Linux build based on Ubuntu 20.04 (Github-hosted) runner
+    name: Linux build
     runs-on: ubuntu-20.04
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
@@ -95,7 +95,7 @@ jobs:
 
     # Use a "Windows Server 2019" (Github-hosted) runner.
     # Reference : https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#github-hosted-runners
-    name: Windows build based on Windows Server 2019 (Github-hosted) runner
+    name: Windows build
     runs-on: windows-2019
 
     # Use a classic "checkout/restore/build/test/sonar" workflow.
