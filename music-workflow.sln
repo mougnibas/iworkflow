@@ -1,23 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{65D1B9F0-6A6E-415E-8CBB-E1BD5E0A0EEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apple-music-service-provider", "src\apple-music-service-provider\apple-music-service-provider.csproj", "{0F10DDA8-DE27-4B1B-B637-B83C880F02F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apple-music-service-provider", "src\apple-music-service-provider\apple-music-service-provider.csproj", "{0F10DDA8-DE27-4B1B-B637-B83C880F02F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contract", "src\contract\contract.csproj", "{E5F0238E-808E-44A7-8DB0-B2F3D911DCFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "contract", "src\contract\contract.csproj", "{E5F0238E-808E-44A7-8DB0-B2F3D911DCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fake-music-service-provider", "src\fake-music-service-provider\fake-music-service-provider.csproj", "{1847E4CF-3224-4A3B-B995-B6753065BDB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fake-music-service-provider", "src\fake-music-service-provider\fake-music-service-provider.csproj", "{1847E4CF-3224-4A3B-B995-B6753065BDB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ui", "src\ui\ui.csproj", "{E0014F49-0523-48D4-8D5B-073F8617E505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ui", "src\ui\ui.csproj", "{E0014F49-0523-48D4-8D5B-073F8617E505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ui-host", "src\ui-host\ui-host.csproj", "{B2694C46-96C0-410B-A6FA-8FE793F519B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ui-host", "src\ui-host\ui-host.csproj", "{B2694C46-96C0-410B-A6FA-8FE793F519B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{260AB6F2-CC6B-42CC-9559-39C96BE80F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aggregate", "test\aggregate\aggregate.csproj", "{840DFB4A-94EE-4A90-A697-CEBDEE09F32D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aggregate", "test\aggregate\aggregate.csproj", "{840DFB4A-94EE-4A90-A697-CEBDEE09F32D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "music-microservice", "src\microservice\music-microservice\music-microservice.csproj", "{7D77C413-C452-440E-9F77-74A5CF0D14CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0F10DDA8-DE27-4B1B-B637-B83C880F02F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -104,6 +103,21 @@ Global
 		{840DFB4A-94EE-4A90-A697-CEBDEE09F32D}.Release|x64.Build.0 = Release|Any CPU
 		{840DFB4A-94EE-4A90-A697-CEBDEE09F32D}.Release|x86.ActiveCfg = Release|Any CPU
 		{840DFB4A-94EE-4A90-A697-CEBDEE09F32D}.Release|x86.Build.0 = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|x64.Build.0 = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F10DDA8-DE27-4B1B-B637-B83C880F02F7} = {65D1B9F0-6A6E-415E-8CBB-E1BD5E0A0EEB}
@@ -112,5 +126,9 @@ Global
 		{E0014F49-0523-48D4-8D5B-073F8617E505} = {65D1B9F0-6A6E-415E-8CBB-E1BD5E0A0EEB}
 		{B2694C46-96C0-410B-A6FA-8FE793F519B3} = {65D1B9F0-6A6E-415E-8CBB-E1BD5E0A0EEB}
 		{840DFB4A-94EE-4A90-A697-CEBDEE09F32D} = {260AB6F2-CC6B-42CC-9559-39C96BE80F13}
+		{7D77C413-C452-440E-9F77-74A5CF0D14CE} = {65D1B9F0-6A6E-415E-8CBB-E1BD5E0A0EEB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F98EA8A-4E3B-43AA-94FC-B57F2C22F597}
 	EndGlobalSection
 EndGlobal
